@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercice 1 – WebTigerPython</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 10px 14px;
+      font-size: 18px;
+    }
+
+    iframe {
+      width: 100%;
+      border: 0;
+      display: block;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="hdr">Exercice 1 – WebTigerPython</header>
+  <iframe id="frame" src="https://webtigerpython.ethz.ch/"></iframe>
+
+  <script>
+    function resizeIframe() {
+      const header = document.getElementById("hdr");
+      const iframe = document.getElementById("frame");
+
+      const headerHeight = header.offsetHeight;
+      const available = window.innerHeight - headerHeight;
+
+      iframe.style.height = available + "px";
+    }
+
+    // Ajuste au chargement
+    resizeIframe();
+
+    // Ajuste si on tourne l'écran
+    window.addEventListener("resize", resizeIframe);
+
+    // iOS Safari déclenche parfois un 2ᵉ calcul après chargement
+    setTimeout(resizeIframe, 300);
+  </script>
+
+</body>
+</html>
